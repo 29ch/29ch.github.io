@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title> Docker </title>
+  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/filipelinhares/ress/master/ress.css">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/css.css">
+</head>
+
+<body>
+<header>
+    <h1> COBOL入門 </h1>
+</header>
+<div id="branding">
+  <p>Simple Design.</p>
+</div>
+<nav>
+  <ul>
+    <li><a href="https://www.cobol.co.jp/cobol-nyuumon/">COBOL入門</a></li>
+    <li><a href="https://www.cobol.co.jp/cobol-nyuumon/kiso/">基礎</a></li>
+    <li><a href="https://www.cobol.co.jp/cobol-nyuumon/ouyou/">応用</a></li>
+    <li><a href="https://www.cobol.co.jp/cobol-nyuumon/benkyou/">勉強</a></li>
+    <li><a href="https://www.cobol.co.jp/cobol-nyuumon/zisyo/">辞書</a></li>
+  </ul>
+</nav>
+<section>
+<article>
+  <h2>COBOL環境構築</h2>
+  <p>
+   $ brew install gnu-cobol
+  </p>
+</article>
+<article>
+  <h2>Hello, world</h2>
+  <pre>
+000100 identification division.
+000200 program-id. hello-world.
+000300 environment division.
+000400 data division.
+000500 procedure division.
+000600 main-procedure.
+000700  hello.
+000800   display "HELLO"
+000900   stop run.
+001000 end program hello-world.
+  </pre>
+</article>
+
+<footer>
+<address>Copyright(C)2020 29ch, Allright Reserved.</address>
+</footer>
+</body>
+</html>
