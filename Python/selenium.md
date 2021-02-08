@@ -1,22 +1,22 @@
 # Selenium using Python
 
-'''
+```
 pip install selenium
 pip install webdriver_manager
 
 brew install chromedriver
 #brew install geckodriver
-'''
+```
 
-'''
+```
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 browser = webdriver.Chrome()
-'''
+```
 
 ## ChromeOptions
-'''
+```
 options = webdriver.ChromeOptions()
 options.add_argument("start-maximized")
 options.add_argument("enable-automation")
@@ -33,11 +33,11 @@ prefs = {"profile.default_content_setting_values.notifications" : 2}
 options.add_experimental_option("prefs",prefs)
 
 driver = new ChromeDriver(options)
-'''
+```
 
 
 ### この接続ではプライバシーが保護されません
-'''
+```
 import pytest
 import time
 import json
@@ -90,15 +90,15 @@ class TestWebdriver():
     element.send_keys('pycon')
     element.send_keys(Keys.RETURN)
     assert 'No results found' not in self.driver.page_source
-'''
+```
 
-'''
+```
 html = driver.page_source.encode('utf-8')
 soup = BeautifulSoup(html, 'lxml')
 #この後は普通にBeautiful Soupの文法通り使える。
-'''
+```
 
-'''
+```
 # ブラウザを開く。
 driver = webdriver.Chrome()
 # Googleの検索TOP画面を開く。
@@ -118,9 +118,9 @@ element.click()
 sleep(5)
 # ブラウザを終了する。
 driver.close()
-'''
+```
 
-'''
+```
 from selenium.webdriver.firefox import service as fs
 firefox_servie = fs.Service(executable_path="/usr/local/bin/geckodriver", log_path='/my/log/path')
 driver = webdriver.Firefox(service=firefox_servie)
@@ -128,30 +128,30 @@ driver = webdriver.Firefox(service=firefox_servie)
 element = driver.find_element(by=By.XPATH, value="//input[@type='text']")
 element.send_keys('Qiita')
 element.submit()
-'''
+```
 
 ### 要素探索
 #### 親要素
-'''
+```
 driver.find_element_by_xpath('//div[@id="cnfm_btn"]').find_element_by_xpath('..')
-'''
+```
 #### 子要素
-'''
+```
 driver.find_element_by_xpath('//div[@id="cnfm_btn"]/div')
-'''
+```
 #### 隣の要素（前）
-'''
+```
 driver.find_element_by_xpath("//p[@id='one']/preceding-sibling::p")
-'''
+```
 #### 隣の要素（後）
-'''
+```
 driver.find_element_by_xpath("//p[@id='one']/following-sibling::p")
-'''
+```
 #### クラス名で探す(単数)
-'''
+```
 driver.find_element_by_class_name('content')
-'''
+```
 #### クラス名で探す(複数)
-'''
+```
 driver.find_elements_by_class_name('content')
-'''
+```
